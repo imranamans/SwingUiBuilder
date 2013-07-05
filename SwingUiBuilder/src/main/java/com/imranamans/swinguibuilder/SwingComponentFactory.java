@@ -42,10 +42,9 @@ public class SwingComponentFactory {
 
 	public static JLabel createLabel(String text) {
 		JLabel jLabel = new JLabel();
+		// text does not wrap automatically and so work around.
 		jLabel.setText("<html><body><table><tr><td>" + text
-				+ "</td></tr></table></body></html>"); // does not wrap
-														// automatically and so
-														// work around.
+				+ "</td></tr></table></body></html>"); 
 		jLabel.setName(text+"_lbl");
 		// jLabel.setPreferredSize(createDimension(120, 25));
 		jLabel.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -53,14 +52,12 @@ public class SwingComponentFactory {
 	}
 
 	public static JFileChooser createFileChooser() {
-		
 		JFileChooser jFileChooser = new JFileChooser();
 		jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		return jFileChooser;
 	}
 	
 	public static JFileChooser createFolderChooser() {
-		
 		JFileChooser jFileChooser = new JFileChooser();
 		jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		return jFileChooser;
@@ -81,7 +78,7 @@ public class SwingComponentFactory {
 	
 	public static JButton createButton(String text) {
 		JButton jButton = new JButton(text);
-		jButton.setPreferredSize(createDimension(80, 30));
+		jButton.setPreferredSize(createDimension(80, 26));
 		return jButton;
 	}
 }
