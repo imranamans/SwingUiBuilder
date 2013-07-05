@@ -13,13 +13,13 @@ Helps build Swing UI faster.
 - Just to give a glimpse of what this can do for you,
 
 
-SwingUiBuilder.getInstance(debug)
-  .createFrame(new GridBagLayout())
-    .addPanel(new GridBagConstraint(), new GridBagLayout())
-      .addLabel("Label 0")
-        .getParent()
-      .addTextField("Label 0")
-        .show();
+		SwingUiBuilder.getInstance(debug)
+			.createFrame(new GridBagLayout())
+				.addPanel(new GridBagConstraint(), new GridBagLayout())
+					.addLabel("Label 0")
+						.getParent()
+					.addTextField("Label 0")
+						.show();
       
         
   
