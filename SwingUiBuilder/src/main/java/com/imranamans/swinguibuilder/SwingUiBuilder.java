@@ -1,32 +1,14 @@
 package com.imranamans.swinguibuilder;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.LayoutManager;
+import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.MutableTreeNode;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.Enumeration;
 import java.util.Stack;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JSeparator;
-import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.MutableTreeNode;
 
 /**
  * @author SHAHI
@@ -37,78 +19,6 @@ public class SwingUiBuilder {
 	private DefaultMutableTreeNode componentTreeNode = null;
 	private boolean debugEnabled = false;
 
-	private static void example1() {
-		/* @formatter:off */
-		SwingUiBuilder.getNewInstance(false)
-			.createFrame(new GridBagLayout())
-				.addPanel(GBC.init().rowCol(0, 0).stretch(1, 1).gbc(), new GridBagLayout())
-					.addLabel("Label 0", GBC.init().rowCol(0, 0).gbc())
-						.getParent()
-					.addTextField("Label 0", GBC.init().rowCol(0, 1).gbc())
-						.getParent()
-					.addLabel("Label 1", GBC.init().rowCol(1, 0).gbc())
-						.getParent()
-					.addTextField("Label 1", GBC.init().rowCol(1, 1).gbc())
-						.getParent()
-					.getParent()
-				.addRowSeparator(GBC.init().rowCol(1, 0).anchor(GridBagConstraints.WEST).fill(GridBagConstraints.BOTH).stretch(1, 0).gbc())
-					.getParent()
-				.addPanel(GBC.init().rowCol(2, 0).gbc(), new GridBagLayout())
-					.addLabel("Forcing this to be a long lable so it goes beyond the length of its containers standard width ", GBC.init().rowCol(0, 0).gbc())
-						.getParent()
-					.addTextField("Label 5", GBC.init().rowCol(0, 1).gbc())
-						.getParent()
-					.getParent()
-				.addRowSeparator(GBC.init().rowCol(3, 0).anchor(GridBagConstraints.SOUTHWEST).fill(GridBagConstraints.BOTH).stretch(1, 0).gbc())
-					.getParent()
-				.addPanel(GBC.init().rowCol(4, 0).fill(GridBagConstraints.HORIZONTAL).stretch(1, 0).gbc(), new GridBagLayout())
-					.addButton("Button 1", GBC.init().anchor(GridBagConstraints.EAST).stretch(1, 0).gbc())
-						.getParent()
-					.addButton("Button 2", GBC.init().anchor(GridBagConstraints.EAST).gbc())
-						.show();
-		/* @formatter:on */
-	}
-	
-	private static void example2() {
-		/* @formatter:off */
-		SwingUiBuilder.getNewInstance(false)
-			.createFrame(new GridBagLayout())
-				.addPanel(GBC.init().rowCol(0, 0).stretch(1, 1).gbc(), new GridBagLayout())
-					.addLabel("Label 0", GBC.init().anchor(GridBagConstraints.EAST).rowCol(0, 0).gbc())
-						.getParent()
-					.addTextField("Label 0", GBC.init().rowCol(0, 1).gbc())
-						.getParent()
-					.addLabel("Label 1", GBC.init().anchor(GridBagConstraints.EAST).rowCol(1, 0).gbc())
-						.getParent()
-					.addTextField("Label 1", GBC.init().rowCol(1, 1).gbc())
-						.getParent()
-					.addLabel("Big Long Label 2", GBC.init().anchor(GridBagConstraints.EAST).rowCol(2, 0).gbc())
-						.getParent()
-					.addTextField("Big Long Label 2", GBC.init().rowCol(2, 1).gbc())
-						.getParent()
-					.addLabel("Workspace Path", GBC.init().anchor(GridBagConstraints.EAST).rowCol(3, 0).gbc())
-						.getParent()
-					.addTextField("Workspace Path", GBC.init().rowCol(3, 1).gbc())
-						.getParent()
-					.addFolderSelectionButton("Browse", "Workspace Path", GBC.init().rowCol(3, 2).gbc())
-						.getParent()
-					.getParent()
-				.addPanel(GBC.init().rowCol(2, 0).fill(GridBagConstraints.HORIZONTAL).stretch(1, 0).gbc(), new GridBagLayout())
-					.addRowSeparator(GBC.init().rowCol(0, 0).widthHeight(2, 1).anchor(GridBagConstraints.SOUTHWEST).fill(GridBagConstraints.HORIZONTAL).stretch(1, 0).gbc())
-						.getParent()
-					.addButton("Ok", GBC.init().rowCol(1, 0).anchor(GridBagConstraints.EAST).stretch(1, 0).gbc())
-						.getParent()
-					.addButton("Cancel", GBC.init().rowCol(1, 1).anchor(GridBagConstraints.EAST).gbc())
-						.show();
-		/* @formatter:on */
-	}
-	
-	public static void main(String[] args) {
-
-//		example1();
-		example2();
-	}
-	
 	public SwingUiBuilder(boolean debugEnabled) {
 		try {
 			UIManager

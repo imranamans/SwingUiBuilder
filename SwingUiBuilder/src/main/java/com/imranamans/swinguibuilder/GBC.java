@@ -1,7 +1,6 @@
 package com.imranamans.swinguibuilder;
 
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
+import java.awt.*;
 
 /*
  * This class helps create GridBagConstraint objects.
