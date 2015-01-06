@@ -1,15 +1,12 @@
 package com.imranamans.swinguibuilder;
 
-import static org.junit.Assert.assertThat;
-
-import java.awt.Component;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-
-import javax.swing.tree.DefaultMutableTreeNode;
-
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
+
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.*;
+
+import static org.junit.Assert.assertThat;
 
 public class SwingUiBuilderTest {
 
