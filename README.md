@@ -21,7 +21,18 @@ Helps build Swing UI faster.
 					.addTextField("Label 0")
 						.show();
       
-        
+Guiding Principles
+
+- No external dependencies. JDK Should suffice.
+- Establish clear reusable pattern for UI.
+
+To Do
+
+- Add Human readable layout builder.
+- Review any un-sustainable behavior added to components to automate building.
+- Handle Tabbing order
+- Handle all components creation.
+  
   
 License
 =======
