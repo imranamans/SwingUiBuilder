@@ -37,7 +37,7 @@ public class SwingComponentFactory {
 		// text does not wrap automatically and so work around.
 		jLabel.setText("<html><body><table><tr><td>" + text
 				+ "</td></tr></table></body></html>"); 
-		jLabel.setName(text+"_lbl");
+		// jLabel.setName(text+"_lbl");
 		// jLabel.setPreferredSize(createDimension(120, 25));
 		jLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		return jLabel;
@@ -54,7 +54,13 @@ public class SwingComponentFactory {
 		jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		return jFileChooser;
 	}
-	
+
+    public static JTextField createTextField() {
+        JTextField jTextField = new JTextField();
+        jTextField.setPreferredSize(createDimension(240, 25));
+        return jTextField;
+    }
+
 	public static JTextField createTextField(String name) {
 		JTextField jTextField = new JTextField();
 		jTextField.setName(name + "_txt");
